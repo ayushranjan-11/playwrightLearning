@@ -18,6 +18,8 @@ checkingFunctionalVar();
 var stringVariableThis = "This is a string function";
 
 function changingStringValue(){
+    stringVariableThis.concat("checking space and string concatination");
+    console.log(stringVariableThis);
 stringVariableThis = 30;
 };
 
@@ -34,3 +36,37 @@ console.log(exampleVariable) //This printed the latest assigned value / or lates
 exampleVariable = "Here now the value have changed again as assigning new value to variable"
 
 console.log(exampleVariable)
+
+//Difference on let and var
+let aa = 10; //let cannot be defined again and again
+//let a = 20;  This will give error
+
+function checkingVarAndInt(){
+     var b = 22;
+
+    {
+        let a = 23;
+    }
+    //console.log(a) The a with value 23 is not being refrerenced outside the block but var can be referenced, hence gives referenceerror in console
+};
+
+checkingVarAndInt();
+console.log(aa)
+
+//Let see const:
+//These are used for fixed value, where the value cannot be changed
+const checkingConstant = "ABCD";
+
+//checkingConstant = "EFGH"; This is not allowed as new value are not allowed to be assigned in the constant variable
+
+//I think, action is not allowed to perform any value action for const
+checkingConstant.concat("E");
+console.log(checkingConstant)
+
+let defaultValueCheckForLet;
+var defaultValueCheckForVar;
+//const defaultValueCheckForConst; Const variable should have value assigned
+
+//Undefined is the default value for let and var
+console.log(defaultValueCheckForLet);
+console.log(defaultValueCheckForVar);
