@@ -29,3 +29,22 @@ function findInterestAmount(principalAmountNew, interestPercentage){
 };
 
 console.log(findInterestAmount(15037, 3));
+
+//Experimenting with arrays
+
+let arrayIs = [1,2,3,4,5,6,7,8,9,10];
+
+function arrayExperiment(arrayToExperiment) {
+    for(let a = 0; a <arrayToExperiment.length; a++){
+        console.log(arrayToExperiment[a])
+    };
+};
+
+arrayExperiment(arrayIs);
+
+//Iterating the above example in simple way for js
+
+console.log("Printing the array content in easy way")
+for(let b of arrayIs){
+    console.log(b)
+};
