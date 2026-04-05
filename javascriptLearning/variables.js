@@ -70,3 +70,13 @@ var defaultValueCheckForVar;
 //Undefined is the default value for let and var
 console.log(defaultValueCheckForLet);
 console.log(defaultValueCheckForVar);
+
+//Object can also be created
+
+let person = {
+    name: "Test",
+    gender: "Unspecified",
+    occupation: "Night manager"
+};
+
+console.log(person);
