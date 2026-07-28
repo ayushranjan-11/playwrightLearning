@@ -1,18 +1,34 @@
+/*
+1. Javascript has loop as for of, java had for each
+*/
+
 // for(let a =1; a<=10; a++){
 // console.log("Checking loop in js")
 // };
 
 
-function writingTablesForProvidedNumber(tableNumber, tillCount){
+function writingTablesForProvidedNumber(tableNumber, tillCount) {
 
-    for(let a = 1; a<=tillCount; a++){
-        console.log(tableNumber +" * " + a + " = "+ tableNumber*a);
+    for (let a = 1; a <= tillCount; a++) {
+        console.log(tableNumber + " * " + a + " = " + tableNumber * a);
     }
 };
 
+//Table print with for of loop
+
+
+function tablePrinting(number, tableLimiter){
+
+    for(let i = 1; i<=tableLimiter; i++){
+        console.log(number + " * "+ i + " = " + number*i)
+    }
+};
+
+tablePrinting(2,10)
+
 //writingTablesForProvidedNumber(2,20);
 
-function findInterestPercentage(principalAmount, amountPaidAsInterest){
+function findInterestPercentage(principalAmount, amountPaidAsInterest) {
 
     let percentage = (amountPaidAsInterest * 100) / principalAmount * 12;
 
@@ -21,7 +37,7 @@ function findInterestPercentage(principalAmount, amountPaidAsInterest){
 
 // console.log(findInterestPercentage(15037, 38));
 
-function findInterestAmount(principalAmountNew, interestPercentage){
+function findInterestAmount(principalAmountNew, interestPercentage) {
 
     let interestAmountPerAnnum = (principalAmountNew * (interestPercentage / 100));
 
@@ -32,15 +48,26 @@ function findInterestAmount(principalAmountNew, interestPercentage){
 
 //Experimenting with arrays
 
-let arrayIs = [1,2,3,4,5,6,7,8,9,10];
+let arrayIs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 let arrayNew = [1, "Checking", true, 3.14, false];
 
 function arrayExperiment(arrayToExperiment) {
-    for(let a = 0; a <arrayToExperiment.length; a++){
+    for (let a = 0; a < arrayToExperiment.length; a++) {
         console.log(arrayToExperiment[a])
     };
 };
+
+//Defined array can be loop with for of loop in js
+
+function arrayLoopingWithForOf(arrayToExperiment){
+
+    for(let a of arrayToExperiment){ //This can loop for the array
+        console.log(a)
+    }
+};
+
+arrayLoopingWithForOf(arrayNew);
 
 // arrayExperiment(arrayIs);
 
@@ -57,9 +84,9 @@ function arrayExperiment(arrayToExperiment) {
 // };
 
 //Checking while loop
-function whileLoopCheck(loopLimit){
+function whileLoopCheck(loopLimit) {
 
-    while(loopLimit<=10){
+    while (loopLimit <= 10) {
         console.log(loopLimit);
         loopLimit++;
     };
@@ -67,13 +94,13 @@ function whileLoopCheck(loopLimit){
 //whileLoopCheck(1);
 
 //Checking do while loop
-function doWhileLoop(loopLimitNew){
+function doWhileLoop(loopLimitNew) {
 
-    do{
+    do {
         console.log("Print is from do while loop");
         console.log(loopLimitNew);
         loopLimitNew++;
-    } while(loopLimitNew<=10);
+    } while (loopLimitNew <= 10);
 };
 //doWhileLoop(1);
 
@@ -85,9 +112,9 @@ let person = {
     work: "Pak muktakbir"
 };
 
-for(let r in person){
+for (let r in person) {
     //Here i want to check the content of the object and then proceed further
-    if(r === "occupation"){
+    if (r === "occupation") {
         console.log(person[r]);
     };
 };

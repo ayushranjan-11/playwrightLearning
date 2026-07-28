@@ -23,11 +23,15 @@
     console.log(a)
     a = 9+1; //This action will not be allowed for the const, new assignment is not allowed for const
     console.log(a)
+
+6. folder back option -> cd ..
+
+7. default value for var and let will be undefined, const don't allow to have undefined value as default
+
+8. Adding values like 3 and a for the same let variable, is allowed in the JavaScript
+
+
 */
-
-
-
-
 
 
 //console.log("Hello Friend!")
@@ -37,7 +41,7 @@
 var x = 10;
 
 //Function declaration in javascript
-function checkingFunctionalVar(){
+function checkingFunctionalVar() {
     var y = 20; //Scope of this variable stays inside the function only
 
     //console.log(y)
@@ -49,10 +53,10 @@ checkingFunctionalVar();
 
 var stringVariableThis = "This is a string function";
 
-function changingStringValue(){
+function changingStringValue() {
     stringVariableThis.concat("checking space and string concatination");
     //console.log(stringVariableThis);
-stringVariableThis = 30;
+    stringVariableThis = 30;
 };
 
 changingStringValue();
@@ -73,8 +77,8 @@ exampleVariable = "Here now the value have changed again as assigning new value 
 let aa = 10; //let cannot be defined again and again
 //let a = 20;  This will give error because in line 48 we are again declaring the same a with new value, (let do not allow re declaration with the same name)
 
-function checkingVarAndInt(){
-     var b = 22;
+function checkingVarAndInt() {
+    var b = 22;
 
     {
         let a = 23;
@@ -95,7 +99,7 @@ const numberCheckWithConst = 9;
 
 //I think, action is not allowed to perform any value action for const
 checkingConstant.concat("E");
-numberCheckWithConst = numberCheckWithConst+1;
+numberCheckWithConst = numberCheckWithConst + 1;
 console.log(checkingConstant)
 console.log(numberCheckWithConst)
 
