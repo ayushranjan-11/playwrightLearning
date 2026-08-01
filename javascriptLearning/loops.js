@@ -1,5 +1,14 @@
 /*
 1. Javascript has loop as for of, java had for each
+2. In javascript if we have to iterate the items of object -> we can use for in loop
+    and if iteration is required on array then for of loop can be used for iteration (for in loop can also be used in array iteration, 
+    but for of loop cannot be used to iterate objects)
+    object in js example:
+        let objectExample = {
+        objectLocation = "InMemory",
+        objectPosition = 1,
+        objectUseful = true
+        }
 */
 
 // for(let a =1; a<=10; a++){
@@ -17,14 +26,14 @@ function writingTablesForProvidedNumber(tableNumber, tillCount) {
 //Table print with for of loop
 
 
-function tablePrinting(number, tableLimiter){
+function tablePrinting(number, tableLimiter) {
 
-    for(let i = 1; i<=tableLimiter; i++){
-        console.log(number + " * "+ i + " = " + number*i)
+    for (let i = 1; i <= tableLimiter; i++) {
+        console.log(number + " * " + i + " = " + number * i)
     }
 };
 
-tablePrinting(2,10)
+tablePrinting(2, 10)
 
 //writingTablesForProvidedNumber(2,20);
 
@@ -60,9 +69,9 @@ function arrayExperiment(arrayToExperiment) {
 
 //Defined array can be loop with for of loop in js
 
-function arrayLoopingWithForOf(arrayToExperiment){
+function arrayLoopingWithForOf(arrayToExperiment) {
 
-    for(let a of arrayToExperiment){ //This can loop for the array
+    for (let a of arrayToExperiment) { //This can loop for the array
         console.log(a)
     }
 };
@@ -111,10 +120,17 @@ let person = {
     occupation: "Sher-a-baloch",
     work: "Pak muktakbir"
 };
-
+// looping in object, we have to use for in instead of for of
 for (let r in person) {
     //Here i want to check the content of the object and then proceed further
     if (r === "occupation") {
         console.log(person[r]);
     };
+};
+
+//Looping array with for in
+let arrayToLoop = [1,"Hello", 3, "Friend"]
+
+for (let ab in arrayToLoop){
+    console.log(arrayToLoop[ab])
 };
