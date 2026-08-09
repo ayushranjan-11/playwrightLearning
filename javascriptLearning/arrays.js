@@ -1,3 +1,8 @@
+/*
+If array size action is performed and start or end is given out of array arrange, {if -ve value then it is normalized with performing addition to array size and if +ve value that is out of range then it automatically takes max value of an array}
+Check below for examples
+*/
+
 let array1 = [];
 
 //push(parameter is allowed to pass) -> To add an element in an array, unlike java specific data type is not defined here so, mix of different data's can be added in a single array
@@ -96,4 +101,74 @@ You passed deleteCount = -2
 Rule: If deleteCount < 0, it is treated as 0
 */
 
-//slice() -> 
+let spliceCheck = [1, 2, 3]
+
+spliceCheck.splice(-4, 0, 4)
+
+console.log(spliceCheck) //Output -> [ 4, 1, 2, 3 ]
+
+//slice() -> It takes the start and end number for array list and return the array content from start to end - 1
+
+console.log("-------splice() output-------")
+
+let sliceArray = [1, 2, 3, 4, 5]
+
+let sliceArrayReturn = sliceArray.slice(0, 2); //Expected, but it did not affected the array, instead start and end took the array content and returned it as new entry
+
+console.log(sliceArray) //Thought was slice will change the content of the array, but array is as it is -> [ 1, 2, 3, 4, 5 ]
+
+console.log(sliceArrayReturn) // Returns or stores a new array with start and end of an array -> [ 1, 2 ]
+
+//Now if we provide index not available in the array, then what happens
+
+let sliceArrayUnIndexed = sliceArray.slice(-3, 9)
+
+console.log(sliceArray)
+
+console.log(sliceArrayUnIndexed) //Output -> [ 3, 4, 5 ]
+//Reason for the ouput is:
+/*
+Normalize indices:
+start = -3 → -3 + 5 = 2
+end = 9 → greater than array length → clamped to 5
+So: slice(2, 5)
+→ Elements at indices 2, 3, 4 → [3, 4, 5]
+*/
+
+let sliceArrayUnIndexedAgain = sliceArray.slice(-4, -1)
+
+console.log(sliceArrayUnIndexedAgain) //Output -> [ 2, 4, 5 ]
+/* Reason for the output is:
+Normalize:
+start = -4 → -4 + 5 = 1
+end = -1 → -1 + 5 = 4
+So: slice(1, 4)
+→ Indices 1, 2, 3 → [2, 3, 4]
+
+*/
+
+//concat(); -> It use to add two array, also it returns a new array
+
+console.log("-------concat() output-------")
+
+let toAdd = [1,2,3,4]
+let toBeAdded = ['a','b','c']
+
+let arrayResult = toAdd.concat(toBeAdded);
+
+console.log(arrayResult)
+console.log(toBeAdded.concat(toAdd));
+
+let emptyArray = [];
+
+console.log(toBeAdded.concat(emptyArray))
+
+//Can we add array and non array with concat?
+
+let nonArray = 90;
+
+console.log(toBeAdded.concat(nonArray)); //Yes we can, Output -> [ 'a', 'b', 'c', 90 ], it get added as array item
+
+//indexOf(); -> 
+
+console.log("-------indexOf() output-------")
