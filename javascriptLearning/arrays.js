@@ -147,6 +147,20 @@ So: slice(1, 4)
 
 */
 
+//I wanted to check on one case where start and end eventually point to the same array index
+
+let arrayIndexSame = [1,2,'ab', 'cd']
+
+let arrayIndexSamePostAction = arrayIndexSame.slice(2,3)
+
+console.log(arrayIndexSame)
+
+console.log(arrayIndexSamePostAction)
+
+let arrayIndexSamePostActionWithNegative = arrayIndexSame.slice(-2,-1)
+
+console.log(arrayIndexSamePostActionWithNegative)
+
 //concat(); -> It use to add two array, also it returns a new array
 
 console.log("-------concat() output-------")
@@ -168,6 +182,16 @@ console.log(toBeAdded.concat(emptyArray))
 let nonArray = 90;
 
 console.log(toBeAdded.concat(nonArray)); //Yes we can, Output -> [ 'a', 'b', 'c', 90 ], it get added as array item
+
+//Checking if concat will update the old array with new entry, ofcourse it will. It depends on the concat return array is where redirected to whether to new variable or already existing one
+
+let oldArray = [1,2,3,4]
+
+let arrayEntryToBeAdded = ['a','b','c','d']
+
+oldArray = oldArray.concat(arrayEntryToBeAdded)
+
+console.log(oldArray)
 
 //indexOf(); -> 
 
