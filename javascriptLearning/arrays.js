@@ -234,3 +234,13 @@ console.log(
 //forEach(); -> Returns the first index at which a given element can be found in an array, return -1 for non matching
 
 console.log("-------forEach() output-------");
+
+let n = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+n.forEach((i) => {
+  console.log(i);
+})
+
+n.forEach(function(i) {
+  console.log(i*i)
+})
