@@ -193,7 +193,8 @@ oldArray = oldArray.concat(arrayEntryToBeAdded);
 
 console.log(oldArray);
 
-//indexOf(); -> Returns the first index at which a given element can be found in an array, return -1 for non matching
+//indexOf(); -> Returns the first index at which a given element can be found in an array, return -1 for non matching,
+// this is useful for string too!, and it is case sensitive. The substring entry should be as it is even if it is character or set of characters
 
 console.log("-------indexOf() output-------");
 
@@ -235,12 +236,18 @@ console.log(
 
 console.log("-------forEach() output-------");
 
-let n = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+let n = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 n.forEach((i) => {
   console.log(i);
-})
+});
 
-n.forEach(function(i) {
-  console.log(i*i)
-})
+n.forEach(function (i) {
+  console.log(i * i);
+});
+
+//The string itself can be iterated or character position can be picked automatically
+
+let stringToCharacterAccess = "String which index can be picked";
+console.log(stringToCharacterAccess[2]);
+console.log(stringToCharacterAccess[stringToCharacterAccess.length - 1]); //Length is property not the function of the string
