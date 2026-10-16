@@ -1,35 +1,18 @@
 import { test, expect } from "@playwright/test";
-import {
-  usernameSelector,
-  passwordSelector,
-  loginButtonSelector,
-  homeButtonSelector,
-} from "../login_page_locator.js";
+import loginPageLocator from "../pages-locator/login_page_locator.js";
+//import 'dotenv/config'
 
-//Page variables
-
-// const loginUsername = "hasday19@gmail.com";
-// const loginPassword = "Automation@123";
-// let usernameSelector;
-// let passwordSelector;
-// let loginButtonSelector;
-// let homeButtonSelector;
 
 test("Login page redirect", async ({ page }) => {
-  const loginURL = process.env.LOGIN_URL;
-  // usernameSelector = page.locator("//*[@id='email']");
-  // passwordSelector = page.locator("//*[@id='password']");
-  // loginButtonSelector = page.locator("//*[@id='login-btn']");
-  // homeButtonSelector = page.locator("//*[@id='nav-home']");
-
   //await page.goto(process.env.loginURL);
-  await page.goto(loginURL);
+  const loginPageLocate = new loginPageLocator(page);
+  await page.goto(process.env.LOGIN_URL);
   console.log(await page.title());
   await loginIntoPortal(
-    usernameSelector,
-    passwordSelector,
-    loginButtonSelector,
-    homeButtonSelector,
+    loginPageLocate.usernameSelector,
+    loginPageLocate.passwordSelector,
+    loginPageLocate.loginButtonSelector,
+    loginPageLocate.homeButtonSelector,
   ); //This was an issue, the function was async and I was not adding await when calling the function
 });
 
